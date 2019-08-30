@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NetDemo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/NetDemo_jar</output-path>
+    <root id="archive" name="NetDemo.jar">
+      <element id="module-output" name="NetDemo" />
+    </root>
+  </artifact>
+</component>
