@@ -169,7 +169,7 @@ public class FtpUtil {
         return success;
     }
 
-    public static void browser(String ftpHost, String ftpUserName, String ftpPassword, int ftpPort, String pathname, String localPath) {
+    public static void browser( String pathname, String localPath) {
 
         /**
          *@auothor:huangqiang
@@ -229,8 +229,7 @@ public class FtpUtil {
                     System.err.println("已在根目录，无法继续返回上一层！");
                 }
                 //返回上一级
-                browser(ftpHost, ftpUserName,
-                        ftpPassword, ftpPort, pathname, localPath);
+                browser(pathname, localPath);
             } else {
                 //推出查询
                 if (index == -2) {
@@ -239,8 +238,7 @@ public class FtpUtil {
                     //查寻下一级文件夹
                     if (files[index].isDirectory()) {
                         deepth++;
-                        browser(ftpHost, ftpUserName,
-                                ftpPassword, ftpPort, pathname + File.separator + files[index].getName(), localPath);
+                        browser(pathname + File.separator + files[index].getName(), localPath);
                     } else {
                         //文件操作
                         System.out.print("选择下载或者删除文件 0：下载，1：删除 ");
@@ -253,7 +251,7 @@ public class FtpUtil {
                             deleteFile( pathname, files[index].getName());
                         }
                         //显示当前目录文件列表
-                        browser(ftpHost, ftpUserName, ftpPassword, ftpPort, pathname, localPath);
+                        browser( pathname, localPath);
                     }
                 }
             }
@@ -311,7 +309,7 @@ public class FtpUtil {
             e.printStackTrace();
         }
     }
-    public  static  void search(String ftpHost, String ftpUserName, String ftpPassword, int ftpPort, String pathname,String localPath){
+    public  static  void search( String pathname,String localPath){
         /**
          *@auothor:huangqiang
          *@date:19-8-29 下午8:53
@@ -355,7 +353,7 @@ public class FtpUtil {
             //  重新查找
             if (choose.equals("y")) {
                 fileBeans=new ArrayList<>();
-                search(ftpHost,ftpUserName,ftpPassword,ftpPort,pathname,localPath);
+                search(pathname,localPath);
             } else {
                 //结束查找
                 if (choose.equals("n")) {
@@ -378,7 +376,7 @@ public class FtpUtil {
                 deleteFile(target.getPath(), target.getName());
             }
             fileBeans=new ArrayList<>();
-            search(ftpHost,ftpUserName,ftpPassword,ftpPort,pathname,localPath);
+            search(pathname,localPath);
         }
     }
 }
