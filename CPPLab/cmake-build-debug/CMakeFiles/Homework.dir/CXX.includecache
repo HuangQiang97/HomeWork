@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/f/C++/ClionProject/Homework/Headers/CPPLab.h
+iostream
+-
+complex
+-
+vector
+-
+fstream
+-
+Tools.h
+/cygdrive/f/C++/ClionProject/Homework/Headers/Tools.h
+iomanip
+-
+
+/cygdrive/f/C++/ClionProject/Homework/Headers/Tools.h
+stdio.h
+-
+sys/time.h
+-
+
+/cygdrive/f/C++/ClionProject/Homework/main.cpp
+iostream
+-
+complex
+-
+vector
+-
+Headers/CPPLab.h
+/cygdrive/f/C++/ClionProject/Homework/Headers/CPPLab.h
+
